@@ -10,7 +10,7 @@ const PatientProfile = () => {
 
   // Mock data - Replace with API call later
   const [personalInfo, setPersonalInfo] = useState({
-    email: 'anna01@gmail.com',
+    email: 'anne01@gmail.com',
     address: 'Colombo, SL',
     gender: 'Female',
     dob: '01.01.2000',
@@ -52,7 +52,7 @@ const PatientProfile = () => {
       <div className="flex-1 p-8 overflow-y-auto">
         <div className="max-w-5xl mx-auto">
           {/* Profile Header */}
-          <ProfileHeader name="Anna Marie" avatarUrl="" />
+          <ProfileHeader name="Anne Marie" avatarUrl="" />
 
           {/* Appointment Summary Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">

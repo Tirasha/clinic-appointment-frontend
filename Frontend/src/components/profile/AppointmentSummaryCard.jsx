@@ -1,8 +1,8 @@
 const AppointmentSummaryCard = ({ title, count, color = 'blue' }) => {
   const colorClasses = {
     blue: 'bg-blue-400',
-    lightblue: 'bg-blue-300',
-    skyblue: 'bg-blue-200'
+    lightblue: 'bg-blue-400',
+    skyblue: 'bg-blue-400'
   };
 
   return (
