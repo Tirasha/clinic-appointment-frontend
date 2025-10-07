@@ -1,11 +1,21 @@
 import { FaUser, FaCalendarAlt, FaCog, FaSignOutAlt } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const Sidebar = ({ activeTab, setActiveTab }) => {
+  const navigate = useNavigate();
+
   const menuItems = [
-    { id: 'profile', label: 'My Profile', icon: FaUser },
-    { id: 'appointments', label: 'My Appointments', icon: FaCalendarAlt },
-    { id: 'settings', label: 'Settings', icon: FaCog },
+    { id: 'profile', label: 'My Profile', icon: FaUser, path: '/PatientProfile' },
+    { id: 'appointments', label: 'My Appointments', icon: FaCalendarAlt, path: '/MyAppointments' },
+    { id: 'settings', label: 'Settings', icon: FaCog, path: null },
   ];
+
+  const handleMenuClick = (item) => {
+    setActiveTab(item.id);
+    if (item.path) {
+      navigate(item.path);
+    }
+  };
 
   return (
     <div className="w-64 bg-gradient-to-b from-emerald-300 to-teal-200 min-h-screen p-6 flex flex-col">
@@ -18,7 +28,7 @@ const Sidebar = ({ activeTab, setActiveTab }) => {
           return (
             <button
               key={item.id}
-              onClick={() => setActiveTab(item.id)}
+              onClick={() => handleMenuClick(item)}
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
                 isActive
                   ? 'bg-white text-blue-500 shadow-md font-semibold'
