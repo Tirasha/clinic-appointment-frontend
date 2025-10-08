@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import DoctorSidebar from '../components/layout/DoctorSidebar';
+import AppointmentsTable from '../components/doctor/AppointmentsTable';
 
 const DoctorAppointments = () => {
   const [activeTab, setActiveTab] = useState('appointments');
@@ -18,10 +19,19 @@ const DoctorAppointments = () => {
             <p className="text-gray-600">Doctor • Appointments</p>
           </div>
 
-          {/* Placeholder for appointment content */}
-          <div className="bg-white rounded-lg shadow p-6">
-            <p className="text-gray-500">Appointment list will be displayed here</p>
+          {/* Search Bar */}
+          <div className="mb-6">
+            <div className="relative max-w-md">
+              <input
+                type="date"
+                defaultValue="2025-08-17"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
           </div>
+
+          {/* Appointments Table */}
+          <AppointmentsTable />
         </div>
       </div>
     </div>
