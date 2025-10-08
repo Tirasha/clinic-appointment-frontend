@@ -11,10 +11,11 @@ const Sidebar = ({ activeTab, setActiveTab }) => {
   ];
 
   const handleMenuClick = (item) => {
-    setActiveTab(item.id);
     if (item.path) {
+      setActiveTab(item.id);
       navigate(item.path);
     }
+    // If path is null, do nothing 
   };
 
   return (

@@ -12,17 +12,17 @@ const MyAppointments = () => {
 
       {/* Main Content */}
       <div className="flex-1 p-8 overflow-y-auto">
-        <div className="max-w-5xl mx-auto">
-          {/* Page Title */}
-          <h1 className="text-3xl font-bold text-gray-800 mb-8">My Appointments</h1>
+        <div className="max-w-6xl mx-auto">
+          {/* Page Title - Centered */}
+          <h1 className="text-3xl font-bold text-gray-800 mb-12 text-center">My Appointments</h1>
 
-          {/* Tab Buttons */}
-          <div className="flex gap-4 mb-8">
+          {/* Tab Buttons - Centered and Full Width */}
+          <div className="flex gap-6 mb-12 max-w-3xl mx-auto">
             <button
               onClick={() => setAppointmentTab('upcoming')}
-              className={`px-8 py-3 rounded-lg font-semibold transition-all ${
+              className={`flex-1 px-8 py-4 rounded-xl font-semibold text-lg transition-all ${
                 appointmentTab === 'upcoming'
-                  ? 'bg-blue-200 text-blue-700'
+                  ? 'bg-blue-200 text-blue-700 shadow-md'
                   : 'bg-gray-200 text-gray-600 hover:bg-gray-300'
               }`}
             >
@@ -30,9 +30,9 @@ const MyAppointments = () => {
             </button>
             <button
               onClick={() => setAppointmentTab('past')}
-              className={`px-8 py-3 rounded-lg font-semibold transition-all ${
+              className={`flex-1 px-8 py-4 rounded-xl font-semibold text-lg transition-all ${
                 appointmentTab === 'past'
-                  ? 'bg-blue-200 text-blue-700'
+                  ? 'bg-blue-200 text-blue-700 shadow-md'
                   : 'bg-gray-200 text-gray-600 hover:bg-gray-300'
               }`}
             >
@@ -41,7 +41,7 @@ const MyAppointments = () => {
           </div>
 
           {/* Placeholder for appointment cards */}
-          <div className="text-center py-12 text-gray-500">
+          <div className="text-center py-16 text-gray-500 text-lg">
             {appointmentTab === 'upcoming' ? 'Upcoming' : 'Past'} appointments will be displayed here
           </div>
         </div>
