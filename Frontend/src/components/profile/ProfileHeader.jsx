@@ -1,4 +1,4 @@
-import profileAvatar from '../../assets/profile_avatar.png';
+import profileImg from '../../assets/profile_img.png';
 
 const ProfileHeader = ({ name, avatarUrl }) => {
   return (
@@ -7,7 +7,7 @@ const ProfileHeader = ({ name, avatarUrl }) => {
       
       <div className="w-32 h-32 rounded-full overflow-hidden bg-gradient-to-br from-pink-400 via-pink-300 to-rose-300 flex items-center justify-center mb-4 shadow-lg border-4 border-white">
         <img 
-          src={avatarUrl || profileAvatar} 
+          src={avatarUrl || profileImg} 
           alt={name} 
           className="w-full h-full object-cover" 
         />
