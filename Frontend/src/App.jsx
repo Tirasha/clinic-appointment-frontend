@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Navbar from './components/Navbar';
 import PatientProfile from './pages/PatientProfile';
 import MyAppointments from './pages/MyAppointments';
+import DoctorProfile from './pages/DoctorProfile';
 
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/PatientProfile" element={<PatientProfile />} />
         <Route path="/MyAppointments" element={<MyAppointments />} />
+        <Route path="/DoctorProfile" element={<DoctorProfile />} />
       </Routes>
     </Router>
   )
