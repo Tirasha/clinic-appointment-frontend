@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Sidebar from '../components/layout/Sidebar';
 import UpcomingAppointments from '../components/profile/UpcomingAppointments';
+import PastAppointments from '../components/profile/PastAppointments';
 
 const MyAppointments = () => {
   const [activeTab, setActiveTab] = useState('appointments');
@@ -18,7 +19,7 @@ const MyAppointments = () => {
           <h1 className="text-3xl font-bold text-gray-800 mb-12 text-center">My Appointments</h1>
 
           {/* Tab Buttons - Centered and Full Width */}
-          <div className="flex gap-6 mb-12 max-w-3xl mx-auto">
+          <div className="flex gap-6 mb-12 max-w-4xl mx-auto">
             <button
               onClick={() => setAppointmentTab('upcoming')}
               className={`flex-1 px-8 py-4 rounded-xl font-semibold text-lg transition-all ${
