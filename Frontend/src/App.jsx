@@ -5,6 +5,8 @@ import Navbar from './components/Navbar';
 import PatientProfile from './pages/PatientProfile';
 import MyAppointments from './pages/MyAppointments';
 import DoctorProfile from './pages/DoctorProfile';
+import DoctorAppointments from './pages/DoctorAppointments';
+
 
 
 const App = () => {
@@ -16,6 +18,7 @@ const App = () => {
         <Route path="/PatientProfile" element={<PatientProfile />} />
         <Route path="/MyAppointments" element={<MyAppointments />} />
         <Route path="/DoctorProfile" element={<DoctorProfile />} />
+        <Route path="/DoctorAppointments" element={<DoctorAppointments />} />
       </Routes>
     </Router>
   )
