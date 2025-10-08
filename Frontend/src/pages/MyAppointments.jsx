@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Sidebar from '../components/layout/Sidebar';
+import UpcomingAppointments from '../components/profile/UpcomingAppointments';
 
 const MyAppointments = () => {
   const [activeTab, setActiveTab] = useState('appointments');
@@ -40,10 +41,8 @@ const MyAppointments = () => {
             </button>
           </div>
 
-          {/* Placeholder for appointment cards */}
-          <div className="text-center py-16 text-gray-500 text-lg">
-            {appointmentTab === 'upcoming' ? 'Upcoming' : 'Past'} appointments will be displayed here
-          </div>
+          {/* Render the appropriate component based on selected tab */}
+          {appointmentTab === 'upcoming' ? <UpcomingAppointments /> : <PastAppointments />}
         </div>
       </div>
     </div>
