@@ -1,4 +1,4 @@
-const AppointmentsTable = () => {
+const AppointmentsTable = ({ onPatientClick }) => {
   // Hardcoded appointments data
   const appointments = [
     {
@@ -9,7 +9,8 @@ const AppointmentsTable = () => {
       gender: 'F',
       contactNo: '712345678',
       address: '11/A',
-      status: 'Completed'
+      status: 'Completed',
+      notes: ''
     },
     {
       id: 2,
@@ -19,7 +20,8 @@ const AppointmentsTable = () => {
       gender: 'M',
       contactNo: '7023415676',
       address: '33/B',
-      status: 'Completed'
+      status: 'Completed',
+      notes: ''
     },
     {
       id: 3,
@@ -29,7 +31,8 @@ const AppointmentsTable = () => {
       gender: 'F',
       contactNo: '7711233555',
       address: 'Wisdom Rd',
-      status: 'Completed'
+      status: 'Completed',
+      notes: ''
     },
     {
       id: 4,
@@ -39,7 +42,8 @@ const AppointmentsTable = () => {
       gender: 'M',
       contactNo: '7600100233',
       address: 'Ferry Rd',
-      status: 'Completed'
+      status: 'Completed',
+      notes: ''
     },
     {
       id: 5,
@@ -49,7 +53,8 @@ const AppointmentsTable = () => {
       gender: 'M',
       contactNo: '7633360088',
       address: '23/A',
-      status: 'Completed'
+      status: 'Completed',
+      notes: ''
     }
   ];
 
@@ -87,7 +92,12 @@ const AppointmentsTable = () => {
             {appointments.map((appointment, index) => (
               <tr key={appointment.id} className="hover:bg-blue-100 transition-colors">
                 <td className="px-6 py-4 text-sm text-gray-700">{index + 1}</td>
-                <td className="px-6 py-4 text-sm text-gray-700">{appointment.name}</td>
+                <td 
+                  className="px-6 py-4 text-sm text-gray-700 cursor-pointer hover:text-blue-600 hover:underline font-medium"
+                  onClick={() => onPatientClick(appointment)}
+                >
+                  {appointment.name}
+                </td>
                 <td className="px-6 py-4 text-sm text-gray-700">{appointment.age}</td>
                 <td className="px-6 py-4 text-sm text-gray-700">{appointment.gender}</td>
                 <td className="px-6 py-4 text-sm text-gray-700">{appointment.contactNo}</td>

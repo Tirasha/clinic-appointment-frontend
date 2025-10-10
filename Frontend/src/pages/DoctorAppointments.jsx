@@ -1,9 +1,22 @@
 import { useState } from 'react';
 import DoctorSidebar from '../components/layout/DoctorSidebar';
 import AppointmentsTable from '../components/doctor/AppointmentsTable';
+import PatientDetailsModal from '../components/doctor/PatientDetailsModal';
 
 const DoctorAppointments = () => {
   const [activeTab, setActiveTab] = useState('appointments');
+  const [selectedPatient, setSelectedPatient] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handlePatientClick = (patient) => {
+    setSelectedPatient(patient);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedPatient(null);
+  };
 
   return (
     <div className="flex min-h-screen bg-gray-50">
@@ -31,9 +44,18 @@ const DoctorAppointments = () => {
           </div>
 
           {/* Appointments Table */}
-          <AppointmentsTable />
+          <AppointmentsTable onPatientClick={handlePatientClick} />
         </div>
       </div>
+
+      {/* Patient Details Modal */}
+      {selectedPatient && (
+        <PatientDetailsModal
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+          patient={selectedPatient}
+        />
+      )}
     </div>
   );
 };
