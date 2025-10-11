@@ -1,40 +1,34 @@
-import React from 'react'
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import Navbar from './components/Navbar';
-import AdminLayout from "./components/Admin/AdminLayout";
+import Dashboard from './pages/admin/Dashboard';
+import Appointments from './pages/admin/Appointments';
+import Doctors from './pages/admin/Doctors';
+import Patients from './pages/admin/Patients';
+import Settings from './pages/admin/Settings';
+import Profile from './pages/admin/Profile';
 
-//Admin Pages - Dulanka
-import Dashboard from "./pages/admin/Dashboard";
-import Doctors from "./pages/admin/Doctors";
-import Appointments from "./pages/admin/Appointments";
-import Patients from "./pages/admin/Patients";
-import ClinicSettings from "./pages/admin/ClinicSettings";
-import Profile from "./pages/admin/Profile";
 
+// Wrapper component to control navbar visibility
 const AppContent = () => {
   const location = useLocation();
 
-  const hideNavbar = location.pathname.startswith("/admin");
+  // Define the paths where you DON'T want the Navbar
+  const hideNavbarPaths = ["/Dashboard","/Appointments","/Doctor","/Patients","/Settings","/Profile"];
 
   return (
     <>
-    {!hideNavbar && <Navbar/>}
-
-    <Routes>
-      {/*Public Route*/}
-      <Route path="/" element={<Home/>}/>
-
-      {/*Admin Routes*/}
-      <Route path="/admin" element={<AdminLayout/>}>
-      <Route index element={<Dashboard/>}/>
-      <Route path="doctors" element={<Doctors/>}/>
-      <Route path="appointments" element={<Appointments/>}/>
-      <Route path="patients" element={<Patients/>}/>
-      <Route path="settings" element={<ClinicSettings/>}/>
-      <Route path="profile" element={<Profile/>}/>
-      </Route>
-    </Routes>
+      {!hideNavbarPaths.includes(location.pathname) && <Navbar />}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Dashboard" element={<Dashboard />} />
+        <Route path="/Appointments" element={<Appointments />} />
+        <Route path="/Doctor" element={<Doctors />} />
+        <Route path="/Patients" element={<Patients />} />
+        <Route path="/Settings" element={<Settings />} />
+        <Route path="/Profile" element={<Profile />} />
+      </Routes>
     </>
   );
 };
@@ -42,9 +36,9 @@ const AppContent = () => {
 const App = () => {
   return (
     <Router>
-      <AppContent/>
+      <AppContent />
     </Router>
   );
 };
 
-export default App
+export default App;
