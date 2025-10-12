@@ -3,27 +3,21 @@ import { CheckCircle, Play } from 'lucide-react';
 
 const AboutUsSection = () => {
   return (
-    // Outer section container
-    <section className="py-20 px-6 bg-white">
+    <section className="py-20 px-6 bg-white" id="about">
       <div className="container mx-auto max-w-7xl flex flex-col lg:flex-row gap-12 items-center">
 
         {/* --- Left Image Column --- */}
         <div className="lg:w-1/2 relative">
           
-          {/* Decorative element (blue dots) - positioned absolutely */}
           <div className="absolute top-1/3 right-0 transform translate-x-1/2 -translate-y-1/2 hidden md:block z-0">
-            {/* Simple component to mimic the blue dotted pattern */}
             <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="50" cy="50" r="45" stroke="#38bdf8" strokeWidth="2" strokeDasharray="5 5" />
               <circle cx="50" cy="50" r="30" stroke="#38bdf8" strokeWidth="2" strokeDasharray="5 5" />
             </svg>
           </div>
 
-          {/* Image Container with Custom Stacking */}
           <div className="relative z-10">
-            {/* Top-Left Image (Surgery) */}
             <div className="rounded-2xl overflow-hidden shadow-2xl w-3/5 h-auto absolute top-0 left-0 transform -translate-x-6 -translate-y-20">
-              {/* Replace with your actual image path */}
               <img
                 src="/src/assets/surgery.jpg" 
                 alt="Medical team performing surgery"
@@ -31,15 +25,12 @@ const AboutUsSection = () => {
               />
             </div>
 
-            {/* Bottom-Right Image (Doctor and Family) */}
             <div className="rounded-2xl overflow-hidden shadow-2xl w-3/5 right-10 h-auto ml-auto mt-24 relative">
-              {/* Replace with your actual image path */}
               <img
                 src="/src/assets/doctor.jpg"
                 alt="Doctor talking to a mother and child"
                 className="w-full h-full object-cover"
               />
-              {/* Play Button Overlay */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <button className="w-16 h-16 bg-white bg-opacity-90 rounded-full flex items-center justify-center text-sky-500 shadow-xl transition hover:scale-105">
                   <Play size={24} fill="currentColor" />
@@ -53,12 +44,12 @@ const AboutUsSection = () => {
         <div className="lg:w-1/2 space-y-6 lg:pl-12 mt-16 lg:mt-0">
           
           {/* Subheading */}
-          <p className="text-lg font-semibold text-sky-500 tracking-wider uppercase flex items-center">
-            About Us
+          <p className="text-lg font-semibold text-sky-500 tracking-wider flex items-center">
+             <span className="mr-5">|</span> About Us
           </p>
 
           {/* Main Title */}
-          <h2 className="text-5xl font-extrabold text-gray-900 leading-tight">
+          <h2 className="text-4xl font-extrabold text-gray-900 leading-tight">
             The Great Place Of Medical Hospital Center.
           </h2>
 
@@ -88,7 +79,6 @@ const AboutUsSection = () => {
             ))}
           </div>
 
-          {/* Discover More Button */}
           <div className="pt-6">
             <button className="bg-sky-500 text-white px-8 py-3 rounded-full font-medium text-lg shadow-lg hover:bg-sky-600 transition duration-300">
               Discover More
