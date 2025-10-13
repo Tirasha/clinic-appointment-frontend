@@ -14,7 +14,7 @@ import FooterSection from '../../components/FooterSection';
 const Home = () => {
   return (
     <div>
-     <section id="home" className="pt-[120px]">
+     <section id="home" className="pt-[115px]">
         <HeroSection />
       </section>
       <AboutUsSection />
