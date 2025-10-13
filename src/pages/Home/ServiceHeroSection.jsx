@@ -1,13 +1,12 @@
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
 
-
-const AboutHeroSection = ({ 
-  title = "About Us", 
-  breadcrumbPath = [{ name: 'Home', link: '/' }, { name: 'About Us', link: '/about' }] 
+const ServiceHeroSection = ({ 
+  title = "Our Services", 
+  breadcrumbPath = [{ name: 'Home', link: '/' }, { name: 'Our Services', link: '/services' }] 
 }) => {
   return (
-    <section className="relative w-full overflow-hidden bg-[#387498] min-h-[400px] flex items-center" id='about'>
+    <section className="relative w-full overflow-hidden bg-[#387498] min-h-[400px] flex items-center">
       
       <div 
         className="absolute inset-0 bg-cover bg-center bg-[#387498] bg-blend-multiply" 
@@ -43,4 +42,4 @@ const AboutHeroSection = ({
   );
 };
 
-export default AboutHeroSection;
+export default ServiceHeroSection;
