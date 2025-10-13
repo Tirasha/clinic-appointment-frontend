@@ -1,18 +1,13 @@
 import React from 'react'
 import { Phone, Mail, MapPin, Search } from "lucide-react";
-import { Link as RouterLink } from "react-router-dom";
-import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const scrollToTop = () => {
-    scroll.scrollToTop({ duration: 600, smooth: true });
-  };
-
   return (
     <div className="w-full fixed top-0 left-0 z-50">
+      
       {/* --- Top bar --- */}
       <div className="bg-emerald-400 text-white text-sm py-2 px-6 flex justify-between items-center">
-        {/* Left side info */}
         <div className="flex items-center gap-6">
           <div className="flex items-center gap-2">
             <Phone size={16} />
@@ -36,61 +31,51 @@ const Navbar = () => {
         </div>
       </div>
 
+      {/* --- Main Navbar --- */}
       <div className="bg-white shadow-sm py-4 px-6 flex justify-between items-center">
-        <div className="flex items-center gap-2 cursor-pointer" onClick={scrollToTop}>
+        
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-2 cursor-pointer">
           <img
             src="/src/assets/logo.png"
             alt="MadiFax Logo"
             style={{ width: "150px", height: "50px" }}
             className="object-contain"
           />
-        </div>
+        </Link>
 
-        {/* Menu */}
+        {/* Menu Items */}
         <ul className="flex gap-8 text-gray-800 font-medium">
-          <li
-            onClick={scrollToTop}
-            className="cursor-pointer hover:text-sky-500 transition"
-          >
-            Home
-          </li>
-
-          <li className="cursor-pointer hover:text-sky-500 transition">
-            <ScrollLink to="about" smooth={true} duration={600} offset={-120}>
-              About
-            </ScrollLink>
-          </li>
-
-          <li className="cursor-pointer hover:text-sky-500 transition">
-            <ScrollLink to="services" smooth={true} duration={600} offset={-120}>
-              Services
-            </ScrollLink>
-          </li>
-
           <li className="hover:text-sky-500 transition">
-            <RouterLink to="/pages">Pages</RouterLink>
+            <Link to="/">Home</Link>
           </li>
           <li className="hover:text-sky-500 transition">
-            <RouterLink to="/blog">Blog</RouterLink>
+            <Link to="/about">About</Link>
           </li>
           <li className="hover:text-sky-500 transition">
-            <RouterLink to="/contact">Contact</RouterLink>
+            <Link to="/services">Services</Link>
+          </li>
+          <li className="hover:text-sky-500 transition">
+            <Link to="/pages">Pages</Link>
+          </li>
+          <li className="hover:text-sky-500 transition">
+            <Link to="/blog">Blog</Link>
+          </li>
+          <li className="hover:text-sky-500 transition">
+            <Link to="/contact">Contact</Link>
           </li>
         </ul>
 
         <div className="flex items-center gap-4">
-          <Search className="text-gray-700 cursor-pointer" size={20} />
-           <ScrollLink
-            to="appointment"
-            smooth={true}
-            duration={600}
-            offset={-120}
-          >
-            <button className="bg-sky-500 text-white px-5 py-2 rounded-full font-medium hover:bg-sky-600 transition">
-              Appointment
-            </button>
-          </ScrollLink>
-        </div>
+          <Link to="/login" className="text-gray-700 hover:text-sky-500 font-medium">Login</Link>
+          <Link to="/register" className="text-gray-700 hover:text-sky-500 font-medium">Register</Link>
+          <Link to="/book-appointment">
+          <button className="bg-sky-500 text-white px-5 py-2 rounded-full font-medium hover:bg-sky-600 transition">
+            Appointment
+          </button>
+          </Link>
+       </div>
+
       </div>
     </div>
   );
