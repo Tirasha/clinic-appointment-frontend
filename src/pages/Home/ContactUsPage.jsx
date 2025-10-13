@@ -2,6 +2,7 @@ import React from 'react';
 import ContactHeroSection from '../../components/ContactHeroSection';
 import ContactInfoCards from '../../components/ContactInfoCards';
 import ContactFormSection from '../../components/ContactFormSection';
+import FooterSection from '../../components/FooterSection';
 
 const ContactUsPage = () => {
   return (
@@ -10,6 +11,7 @@ const ContactUsPage = () => {
         <ContactHeroSection/>
         <ContactInfoCards/>
         <ContactFormSection/>
+        <FooterSection/>
       </section>
     </div>
   );
