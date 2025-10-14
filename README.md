@@ -1,16 +1,10 @@
-# React + Vite
+# MasteryHub
+MasteryHub is an online learning platform built with the MERN stack that connects students and instructors in a modern, interactive environment. It makes course creation, content delivery, and progress tracking simple, while giving students a smooth and engaging learning experience.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Students can sign up, explore free or paid courses, watch video lectures, download resources, take quizzes, and monitor their progress through an easy-to-use dashboard. Instructors can create and manage courses, upload videos and materials, grade assignments, and interact with students directly. Secure payment options make enrolling in premium courses hassle-free.
 
-Currently, two official plugins are available:
+To keep learning collaborative, MasteryHub offers discussion forums, direct messaging, and notifications. It also provides certificates upon course completion, supports multiple languages, and works seamlessly on both web and mobile.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Built to handle thousands of users at once, the platform ensures fast, reliable, and secure access. With cloud-powered video streaming and trusted payment integrations, MasteryHub delivers a smooth experience for both students and instructors.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Our goal is to make MasteryHub a complete solution for online education—scalable, user-friendly, and future-ready.
