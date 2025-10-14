@@ -12,12 +12,26 @@ import BlogsPage from './pages/Home/BlogsPage';
 // Admin
 import AdminLayout from "./admin/AdminLayout";
 
+// Patient
+import PatientProfile from './pages/Patient/PatientProfile';
+import MyAppointments from './pages/Patient/MyAppointments';
+
+//Doctor
+import DoctorAppointments from './pages/Doctor/DoctorAppointments';
+
 const App = () => {
   const isAdmin = window.location.pathname.startsWith("/admin");
 
+  const path = window.location.pathname.toLowerCase();
+
+  const hideNavbar =
+    path.startsWith("/patientprofile") ||
+    path.startsWith("/myappointments") ||
+    path.startsWith("/doctorappointments");
+
   return (
     <Router>
-      {!isAdmin && <Navbar />}
+      {!isAdmin && !hideNavbar && <Navbar />}
 
       <Routes>
         {/* Frontend */}
@@ -29,6 +43,13 @@ const App = () => {
         <Route path="/admin/*" element={<AdminLayout />} />
         <Route path="/contact" element={<ContactUsPage />} />
         <Route path="/blog" element={<BlogsPage />} />
+
+        {/*Patient */}
+        <Route path="/PatientProfile" element={<PatientProfile />} />
+        <Route path="/MyAppointments" element={<MyAppointments />} />
+
+        {/*Doctor */}
+        <Route path="/DoctorAppointments" element={<DoctorAppointments />} />
 
       </Routes>
     </Router>
