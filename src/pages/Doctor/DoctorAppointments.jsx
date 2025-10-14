@@ -21,7 +21,7 @@ const DoctorAppointments = () => {
   return (
     <div className="flex min-h-screen bg-gray-50">
       {/* Sidebar */}
-      <DoctorSidebar activeTab={activeTab} setActiveTab={setActiveTab} />
+      {/* <DoctorSidebar activeTab={activeTab} setActiveTab={setActiveTab} /> */}
 
       {/* Main Content */}
       <div className="flex-1 p-8 overflow-y-auto">

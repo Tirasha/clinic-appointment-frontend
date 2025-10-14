@@ -17,10 +17,13 @@ import PatientProfile from './pages/Patient/PatientProfile';
 import MyAppointments from './pages/Patient/MyAppointments';
 
 //Doctor
+import DoctorLayout from './pages/Doctor/DoctorLayout';
 import DoctorAppointments from './pages/Doctor/DoctorAppointments';
+import DoctorProfile from './pages/Doctor/DoctorProfile';
 
 const App = () => {
   const isAdmin = window.location.pathname.startsWith("/admin");
+  const isDoctor = window.location.pathname.startsWith("/doctor");
 
   const path = window.location.pathname.toLowerCase();
 
@@ -31,7 +34,7 @@ const App = () => {
 
   return (
     <Router>
-      {!isAdmin && !hideNavbar && <Navbar />}
+      {!isAdmin && !isDoctor && !hideNavbar && <Navbar />}
 
       <Routes>
         {/* Frontend */}
@@ -49,8 +52,9 @@ const App = () => {
         <Route path="/MyAppointments" element={<MyAppointments />} />
 
         {/*Doctor */}
+        <Route path="/Doctor/*" element={<DoctorLayout />} />
         <Route path="/DoctorAppointments" element={<DoctorAppointments />} />
-
+        <Route path="/DoctorProfile" element={<DoctorProfile />} />
       </Routes>
     </Router>
   );
