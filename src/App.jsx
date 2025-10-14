@@ -22,9 +22,16 @@ import DoctorAppointments from './pages/Doctor/DoctorAppointments';
 const App = () => {
   const isAdmin = window.location.pathname.startsWith("/admin");
 
+  const path = window.location.pathname.toLowerCase();
+
+  const hideNavbar =
+    path.startsWith("/patientprofile") ||
+    path.startsWith("/myappointments") ||
+    path.startsWith("/doctorappointments");
+
   return (
     <Router>
-      {!isAdmin && <Navbar />}
+      {!isAdmin && !hideNavbar && <Navbar />}
 
       <Routes>
         {/* Frontend */}

@@ -44,7 +44,7 @@ const PatientProfile = () => {
   };
 
   return (
-    <div className="flex min-h-screen bg-gray-50 pt-30">
+    <div className="flex min-h-screen bg-gray-50">
       {/* Sidebar */}
       <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
 
