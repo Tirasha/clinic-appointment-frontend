@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import AdminSidebar from "../components/AdminSidebar"; // import the new Sidebar
+import AdminSidebar from "../components/AdminSidebar";
 import Dashboard from "./Dashboard";
 import Doctors from "./Doctors";
 import Appointments from "./Appointments";
@@ -10,12 +10,14 @@ import Profile from "./Profile";
 
 const AdminLayout = () => {
   return (
-    <div style={{ display: "flex", height: "100vh" }}>
-      {/* Sidebar */}
-      <AdminSidebar />
+    <div className="flex min-h-screen bg-[#F9FBFF]">
+      {/* Fixed Sidebar */}
+      <div className="fixed top-0 left-0 h-full">
+        <AdminSidebar />
+      </div>
 
-      {/* Main Content */}
-      <div style={{ flex: 1, padding: "2rem" }}>
+      {/* Main Content Area */}
+      <div className="flex-1 ml-64 p-8 overflow-y-auto">
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="dashboard" element={<Dashboard />} />

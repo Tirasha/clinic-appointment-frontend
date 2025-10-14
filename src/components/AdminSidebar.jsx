@@ -21,10 +21,10 @@ const AdminSidebar = () => {
   ];
 
   return (
-    <div className="w-64 bg-[#E7F0FA] p-5 flex flex-col shadow-md min-h-screen">
+    <div className="w-64 bg-[#E7F0FA] p-5 flex flex-col shadow-lg h-full">
       {/* Logo */}
-      <div className="flex justify-center mb-8">
-        <img src={MediTrust} alt="logo" className="w-20 h-20" />
+      <div className="flex justify-center mb-10">
+        <img src={MediTrust} alt="MediTrust Logo" className="w-20 h-20" />
       </div>
 
       {/* Menu */}
@@ -37,7 +37,7 @@ const AdminSidebar = () => {
                 `flex items-center gap-3 p-3 rounded-l-xl pr-6 font-medium transition-all duration-300 relative ${
                   isActive
                     ? "bg-[#D6E4FF] text-[#1E40AF]"
-                    : "text-gray-600 hover:bg-[#D6E4FF] hover:text-[#1E40AF]"
+                    : "text-gray-700 hover:bg-[#D6E4FF] hover:text-[#1E40AF]"
                 }`
               }
             >
@@ -45,14 +45,14 @@ const AdminSidebar = () => {
                 <>
                   <span className="flex items-center gap-3 w-full">
                     {item.icon}
-                    {item.name}
+                    <span>{item.name}</span>
                   </span>
 
-                  {/* Right arrow (triangle) */}
+                  {/* Triangle Indicator */}
                   {isActive && (
                     <span
-                      className="absolute right-[-10px] top-1/2 -translate-y-1/2 w-0 h-0 
-                      border-t-[10px] border-t-transparent 
+                      className="absolute right-[-10px] top-1/2 -translate-y-1/2 
+                      w-0 h-0 border-t-[10px] border-t-transparent 
                       border-b-[10px] border-b-transparent 
                       border-l-[10px] border-l-[#D6E4FF]"
                     ></span>

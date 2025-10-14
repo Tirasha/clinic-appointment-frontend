@@ -6,9 +6,6 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home/Home";
 import AboutUsPage from "./pages/Home/AboutUsPage";
 import ServicePage from "./pages/Home/ServicePage";
-import Navbar from './components/Navbar';
-import AboutUsPage from './pages/Home/AboutUsPage';
-import ServicePage from './pages/Home/ServicePage';
 import ContactUsPage from './pages/Home/ContactUsPage';
 import BlogsPage from './pages/Home/BlogsPage';
 
