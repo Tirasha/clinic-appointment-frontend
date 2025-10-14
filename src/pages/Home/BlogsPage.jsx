@@ -1,3 +1,5 @@
+//blog page
+
 import React from 'react';
 import BlogHeroSection from '../../components/BlogHeroSection';
 import BlogSection from './BlogSection';

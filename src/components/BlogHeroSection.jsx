@@ -1,3 +1,4 @@
+//BlogHeroSection
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
 
@@ -6,18 +7,18 @@ const BlogHeroSection = ({
   breadcrumbPath = [{ name: 'Home', link: '/' }, { name: 'Blogs', link: '/blogs' }]
 }) => {
   return (
-    <section className="relative w-full overflow-hidden bg-[#387498] min-h-[300px] flex items-center" id='blogs'>
+    <section className="relative w-full overflow-hidden bg-[#387498] min-h-[400px] flex items-center" id="blogs">
       
-      {/* Background Image with Overlay */}
+      {/* 🔹 Background Image + Overlay */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-[#387498] bg-blend-multiply"
-        style={{ backgroundImage: "url('/src/assets/doctors_banner.jpg')" }}
+        className="absolute inset-0 bg-cover bg-center bg-[#387498] bg-blend-multiply" 
+        style={{ backgroundImage: "url('/src/assets/doctors-staff.jpg')" }}
       ></div>
 
-      {/* Content Container */}
+      {/* 🔹 Content Container */}
       <div className="container mx-auto max-w-7xl px-6 relative z-10 py-10 md:py-0">
         
-        {/* Main Title */}
+        {/* Title */}
         <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-4">
           {title}
         </h1>
@@ -33,7 +34,7 @@ const BlogHeroSection = ({
                 {item.name}
               </a>
               {index < breadcrumbPath.length - 1 && (
-                <ChevronRight size={14} className="opacity-80"/>
+                <ChevronRight size={14} className="opacity-80" />
               )}
             </React.Fragment>
           ))}
